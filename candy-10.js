@@ -15,11 +15,9 @@ function expandedForm(num) {
       continue
     }
 
-    if (i == 0) {
-      resultArr.unshift(remainder)
-    } else {
-      resultArr.unshift(`${10 ** i} x ${remainder}`)
-    }
+    resultArr.unshift(
+      i == 0 ? remainder : resultArr.unshift(`${10 ** i} x ${remainder}`)
+    )
   }
 
   return resultArr.join(" + ")
