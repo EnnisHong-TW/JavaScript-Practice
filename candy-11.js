@@ -8,10 +8,11 @@ function findOddElm(numbers) {
   const groupNumObj = {}
   //分類計算次數
   numbers.forEach((num) => {
-    if (!groupNumObj.hasOwnProperty(num)) {
-      groupNumObj[num] = 1
-    } else {
+    //優化移除!對調順序，提升可讀性
+    if (groupNumObj.hasOwnProperty(num)) {
       groupNumObj[num] += 1
+    } else {
+      groupNumObj[num] = 1
     }
   })
   //返回出現奇數次數之數字
