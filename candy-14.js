@@ -4,7 +4,10 @@
 // 範例："AAABBBDDDAABBBCC" -> ['A', 'B', 'D', 'A', 'B', 'C']
 
 function uniqueOrder(sequence) {
-  // 實作寫在這裡
+  const seqArr = [...sequence]
+  return seqArr.filter((v, index, arr) => {
+    return v !== arr[index - 1]
+  })
 }
 
 console.log(uniqueOrder("AABCC")) // [ 'A', 'B', 'C']
