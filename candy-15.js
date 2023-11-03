@@ -6,7 +6,17 @@
 //      "abcdefg" -> ['ab', 'cd', 'ef', 'g_']
 
 function splitString(str) {
-  // 實作寫在這裡
+  const result = []
+  const strArr = [...str]
+
+  if (strArr.length % 2 !== 0) {
+    strArr.push("_")
+  }
+
+  for (let i = 0; i < strArr.length - 1; i += 2) {
+    result.push(strArr[i] + strArr[i + 1])
+  }
+  return result
 }
 
 console.log(splitString("abcdef")) // ["ab", "cd", "ef"]
