@@ -4,7 +4,15 @@
 // 範例："hello_world" -> "helloWorld"
 
 function toCamelCase(str) {
-  // 實作寫在這裡
+  const strArr = str.split("_")
+  const transfer = strArr.map((word, index) => {
+    if (index == 0) {
+      return word
+    }
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  })
+
+  return transfer.join("")
 }
 
 console.log(toCamelCase("book")) // book
