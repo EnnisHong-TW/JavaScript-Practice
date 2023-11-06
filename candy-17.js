@@ -4,7 +4,18 @@
 // 範例：5 -> 101 -> 2 個 1
 
 function countBits(num) {
-  // 實作寫在這裡
+  let quotient = num
+  const result = []
+
+  while (quotient >= 2) {
+    result.unshift(quotient % 2)
+    quotient = Math.floor(quotient / 2)
+    if (quotient < 2) {
+      result.unshift(quotient)
+    }
+  }
+
+  return result.filter((e) => e === 1).length
 }
 
 console.log(countBits(1234)) // 5
