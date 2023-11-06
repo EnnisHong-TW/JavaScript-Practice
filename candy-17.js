@@ -10,7 +10,7 @@ function countBits(num) {
   while (quotient >= 2) {
     result.unshift(quotient % 2)
     quotient = Math.floor(quotient / 2)
-    if (quotient < 2) {
+    if (quotient > 0 && quotient < 2) {
       result.unshift(quotient)
     }
   }
