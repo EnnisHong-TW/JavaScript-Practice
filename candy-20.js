@@ -3,7 +3,11 @@
 // 題目：檢查字串的 x 跟 o 的數量是不是一樣多，不分大小寫
 
 function xxoo(str) {
-  // 實作寫在這裡
+  const regexO = /(o)/gi
+  const regexX = /(x)/gi
+  const matchO = str.match(regexO)
+  const matchX = str.match(regexX)
+  return matchO !== null && matchX !== null && matchO.length === matchX.length
 }
 
 console.log(xxoo("ooxx")) // true
