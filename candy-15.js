@@ -6,12 +6,12 @@
 //      "abcdefg" -> ['ab', 'cd', 'ef', 'g_']
 
 function splitString(str) {
-  if (!str) {
-    return []
-  }
-
   const regex = /\w{1,2}/g
   const result = str.match(regex)
+
+  if (result === null) {
+    return []
+  }
 
   return result.map((e) => e.padEnd(2, "_"))
 }
