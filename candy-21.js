@@ -3,7 +3,20 @@
 // 題目：實作 Stack 資料結構
 
 class Stack {
-  // 實作寫在這裡
+  constructor() {
+    this.stack = []
+  }
+  get size() {
+    return this.stack.length
+  }
+  push(num) {
+    if (num) {
+      this.stack.push(num)
+    }
+  }
+  pop() {
+    return this.stack.pop()
+  }
 }
 
 const stack = new Stack()

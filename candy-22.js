@@ -3,7 +3,20 @@
 // 題目：實作 Queue 資料結構
 
 class Queue {
-  // 實作寫在這裡
+  constructor() {
+    this.queue = []
+  }
+  enqueue(num) {
+    if (num) {
+      this.queue.push(num)
+    }
+  }
+  get length() {
+    return this.queue.length
+  }
+  dequeue() {
+    return this.queue.shift()
+  }
 }
 
 const queue = new Queue()
